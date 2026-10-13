@@ -1,5 +1,9 @@
 # 콜슨믹서 (ColsonMixer)
 
+
+https://github.com/user-attachments/assets/91de5045-17fe-4a3a-b402-bb0ada9bc171
+
+
 macOS에서 재생 중인 **내부 오디오를 캡처해 Safari로 실시간 웹방송처럼 송출**하는 경량 유틸리티입니다. BlackHole·Soundflower처럼 가상 오디오 드라이버를 설치할 필요가 없습니다.
 
 > 상태: MVP 구현 완료 — macOS 빌드 통과, 앱 정상 기동 확인. 시스템 오디오 녹음 권한 승인과 실제 Safari 재생은 사람이 직접 눌러봐야 해서 아직 실기 검증 전입니다. 자세한 내용은 [테크 PRD](Docs/PRD.md)와 [태스크 문서](Docs/TASKS.md)를 참고하세요.
