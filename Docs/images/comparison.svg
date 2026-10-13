@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" font-family="-apple-system, 'Apple SD Gothic Neo', sans-serif">
+  <rect width="900" height="360" fill="#FFFFFF"/>
+  <text x="450" y="34" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">가상 오디오 드라이버 방식 vs 콜슨믹서 방식</text>
+
+  <!-- Left: BlackHole/Soundflower -->
+  <rect x="40" y="60" width="380" height="270" rx="16" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="230" y="92" text-anchor="middle" font-size="15" font-weight="700" fill="#991B1B">BlackHole / Soundflower 방식</text>
+  <g font-size="12.5" fill="#7F1D1D">
+    <text x="64" y="124">· HAL 플러그인(.driver)을 /Library/Audio/Plug-Ins/HAL 에 설치</text>
+    <text x="64" y="148">· 관리자 암호 입력 + coreaudiod 재시작/재부팅 필요</text>
+    <text x="64" y="172">· 서명·공증되지 않은 드라이버 설치 보안 경고</text>
+    <text x="64" y="196">· 가상 출력 장치를 "기본 출력"으로 수동 전환해야 캡처 가능</text>
+    <text x="64" y="220">· macOS 업데이트마다 재설치/재승인 이슈 잦음</text>
+    <text x="64" y="252" font-weight="600">장점: 시스템 알림음 등 모든 오디오 포착 가능</text>
+    <text x="64" y="276" font-weight="600">단점: 설치 마찰 ↑, 배포·공증 난이도 ↑</text>
+  </g>
+
+  <!-- Right: ColsonMixer -->
+  <rect x="480" y="60" width="380" height="270" rx="16" fill="#ECFDF5" stroke="#10B981" stroke-width="1.5"/>
+  <text x="670" y="92" text-anchor="middle" font-size="15" font-weight="700" fill="#065F46">콜슨믹서 방식 (Core Audio Process Tap)</text>
+  <g font-size="12.5" fill="#065F46">
+    <text x="504" y="124">· 드라이버 설치·재부팅 전혀 불필요</text>
+    <text x="504" y="148">· 앱 실행 중 선택한 프로세스(들)의 출력만 즉시 탭</text>
+    <text x="504" y="172">· 최초 1회 시스템 오디오 캡처 권한 승인만 필요</text>
+    <text x="504" y="196">· 기본 출력 장치는 그대로 유지(사용자 경험 방해 없음)</text>
+    <text x="504" y="220">· 앱 삭제 시 흔적 없이 완전히 제거</text>
+    <text x="504" y="252" font-weight="600">장점: 설치 마찰 없음, 안전하고 가역적</text>
+    <text x="504" y="276" font-weight="600">보강: 구버전 호환이 필요하면 HAL 플러그인을 Phase 2로 추가</text>
+  </g>
+</svg>

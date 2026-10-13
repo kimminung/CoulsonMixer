@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" font-family="-apple-system, 'Apple SD Gothic Neo', sans-serif">
+  <defs>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4B5563"/>
+    </marker>
+  </defs>
+  <rect width="900" height="460" fill="#FFFFFF"/>
+  <text x="450" y="34" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">송출 시작 시퀀스</text>
+
+  <!-- actors -->
+  <text x="100" y="70" text-anchor="middle" font-size="13" font-weight="600" fill="#374151">사용자</text>
+  <text x="300" y="70" text-anchor="middle" font-size="13" font-weight="600" fill="#374151">ColsonMixer 앱</text>
+  <text x="520" y="70" text-anchor="middle" font-size="13" font-weight="600" fill="#374151">Core Audio</text>
+  <text x="730" y="70" text-anchor="middle" font-size="13" font-weight="600" fill="#374151">Safari</text>
+
+  <line x1="100" y1="80" x2="100" y2="430" stroke="#D1D5DB" stroke-width="1.5"/>
+  <line x1="300" y1="80" x2="300" y2="430" stroke="#D1D5DB" stroke-width="1.5"/>
+  <line x1="520" y1="80" x2="520" y2="430" stroke="#D1D5DB" stroke-width="1.5"/>
+  <line x1="730" y1="80" x2="730" y2="430" stroke="#D1D5DB" stroke-width="1.5"/>
+
+  <g font-size="12" fill="#1F2937">
+    <path d="M100,110 L300,110" stroke="#4B5563" stroke-width="1.5" marker-end="url(#arrow2)" fill="none"/>
+    <text x="200" y="104" text-anchor="middle">① 캡처할 앱 선택 + 송출 시작</text>
+
+    <path d="M300,150 L520,150" stroke="#4B5563" stroke-width="1.5" marker-end="url(#arrow2)" fill="none"/>
+    <text x="410" y="144" text-anchor="middle">② CATapDescription 생성 요청</text>
+
+    <path d="M520,180 L300,180" stroke="#4B5563" stroke-width="1.5" marker-end="url(#arrow2)" stroke-dasharray="4 3" fill="none"/>
+    <text x="410" y="174" text-anchor="middle">③ (최초 1회) 권한 승인 프롬프트</text>
+
+    <path d="M520,220 L300,220" stroke="#4B5563" stroke-width="1.5" marker-end="url(#arrow2)" fill="none"/>
+    <text x="410" y="214" text-anchor="middle">④ Aggregate Device + PCM IOProc 콜백</text>
+
+    <rect x="260" y="240" width="80" height="26" rx="6" fill="#FEF3C7" stroke="#D97706"/>
+    <text x="300" y="257" text-anchor="middle" font-size="11">AAC 인코딩</text>
+
+    <rect x="260" y="280" width="80" height="26" rx="6" fill="#FCE7F3" stroke="#DB2777"/>
+    <text x="300" y="297" text-anchor="middle" font-size="11">NWListener 기동</text>
+
+    <path d="M300,330 L100,330" stroke="#4B5563" stroke-width="1.5" marker-end="url(#arrow2)" fill="none"/>
+    <text x="200" y="324" text-anchor="middle">⑤ 로컬 방송 URL 표시</text>
+
+    <path d="M100,360 L730,360" stroke="#4B5563" stroke-width="1.5" marker-end="url(#arrow2)" fill="none"/>
+    <text x="400" y="354" text-anchor="middle">⑥ "Safari에서 열기" → http://localhost:17320/</text>
+
+    <path d="M730,390 L300,390" stroke="#4B5563" stroke-width="1.5" marker-end="url(#arrow2)" fill="none"/>
+    <text x="500" y="384" text-anchor="middle">⑦ GET /stream.aac (청크 응답, 지속 연결)</text>
+
+    <text x="410" y="414" text-anchor="middle" fill="#6B7280" font-size="11">이후 ⑥·⑦이 반복되며 실시간 오디오가 &lt;audio&gt; 태그로 재생됨</text>
+  </g>
+</svg>
